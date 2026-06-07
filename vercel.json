@@ -1,6 +1,10 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/revenus-airbnb-la-defense-2026", "destination": "/blog/revenus-airbnb-la-defense-2026", "permanent": true },
+    { "source": "/lmnp-la-defense-guide-fiscal-2026", "destination": "/blog/lmnp-la-defense-guide-fiscal-2026", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
