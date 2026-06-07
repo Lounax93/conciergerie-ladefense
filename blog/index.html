@@ -75,44 +75,28 @@
     .sec-eyebrow::before{content:'';width:18px;height:1.5px;background:var(--cyan);}
     .sec-title{font-family:'Inter Tight',sans-serif;font-weight:800;font-size:clamp(1.85rem,2.8vw,2.75rem);color:var(--graphite);line-height:1.1;letter-spacing:-.03em;}
 
-    /* COMING SOON */
-    .coming-sec{background:var(--white);padding:96px 0;}
-    .coming-card{
-      background:var(--glass);border:1px solid var(--border);border-radius:28px;padding:48px;
-      position:relative;overflow:hidden;margin-bottom:48px;
-    }
-    .coming-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--steel),var(--cyan));}
-    .coming-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:16px;}
-    .coming-badge-wrap{display:flex;align-items:center;gap:10px;}
-    .coming-live-dot{width:7px;height:7px;border-radius:50%;background:var(--calder);animation:pulse 1.8s ease-in-out infinite;flex-shrink:0;}
-    .coming-badge{font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--calder);}
-    .coming-eta{font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--slate);padding:5px 12px;border-radius:4px;}
-    .coming-card h2{font-family:'Inter Tight',sans-serif;font-size:1.6rem;font-weight:800;color:var(--graphite);margin-bottom:10px;letter-spacing:-.03em;}
-    .coming-card p{font-size:.88rem;color:var(--muted);line-height:1.88;font-weight:300;margin-bottom:24px;max-width:560px;}
-    .coming-progress-wrap{display:flex;align-items:center;gap:12px;}
-    .coming-track{flex:1;height:4px;background:var(--slate);border-radius:2px;overflow:hidden;}
-    .coming-fill{height:100%;width:40%;background:linear-gradient(90deg,var(--steel),var(--cyan));border-radius:2px;}
-    .coming-pct{font-family:'Inter Tight',sans-serif;font-size:.8rem;font-weight:700;color:var(--cyan);}
+    /* ARTICLES SECTION */
+    .articles-sec{background:var(--white);padding:96px 0;}
+    .articles-sec .sec-wrap{padding-bottom:32px;}
 
-    /* TOPIC CARDS */
-    .topics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-    .topic-card{
-      background:var(--white);border:1px solid var(--border);border-radius:24px;padding:32px 28px;
-      position:relative;overflow:hidden;
-      transition:box-shadow .3s,transform .25s,border-color .3s;
-    }
-    .topic-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--steel),var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.22,1,.36,1);}
-    .topic-card:hover{box-shadow:0 20px 60px rgba(11,18,32,.08);transform:translateY(-4px);border-color:rgba(0,184,217,.18);}
-    .topic-card:hover::before{transform:scaleX(1);}
-    .topic-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
-    .tag{font-size:.54rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:4px;}
-    .tag-steel{background:rgba(30,78,122,.1);color:var(--steel);border:1px solid rgba(30,78,122,.15);}
-    .tag-cyan{background:rgba(0,184,217,.1);color:var(--cyan);border:1px solid rgba(0,184,217,.15);}
-    .tag-silver{background:var(--slate);color:var(--silver);border:1px solid var(--border);}
-    .topic-soon{display:inline-flex;align-items:center;gap:5px;font-size:.54rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
-    .topic-soon-dot{width:5px;height:5px;border-radius:50%;background:var(--silver);}
-    .topic-card h3{font-family:'Inter Tight',sans-serif;font-size:1.05rem;font-weight:700;color:var(--graphite);margin-bottom:10px;letter-spacing:-.02em;}
-    .topic-card p{font-size:.82rem;color:var(--muted);line-height:1.85;font-weight:300;}
+    /* ARTICLE CARDS */
+    .topics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+    @media(max-width:768px){.topics-grid{grid-template-columns:1fr;gap:16px;}}
+    .article-card{background:var(--white);border:1px solid var(--border);border-radius:24px;overflow:hidden;position:relative;text-decoration:none;transition:box-shadow .3s,transform .25s,border-color .3s;display:flex;flex-direction:column;}
+    .article-card:hover{box-shadow:0 20px 60px rgba(11,18,32,.08);transform:translateY(-4px);border-color:rgba(0,184,217,.18);}
+    .card-thumb{height:160px;display:flex;align-items:flex-start;justify-content:flex-start;padding:16px;position:relative;}
+    .card-thumb-label{font-size:.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#fff;background:rgba(11,18,32,.55);backdrop-filter:blur(8px);padding:5px 12px;border-radius:6px;border:1px solid rgba(255,255,255,.12);}
+    .card-body{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column;}
+    .card-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+    .card-tag{font-size:.6rem;font-weight:600;color:var(--cyan);letter-spacing:.08em;text-transform:uppercase;}
+    .card-date{font-size:.58rem;font-weight:400;color:var(--muted);}
+    .card-title{font-family:'Inter Tight',sans-serif;font-size:1rem;font-weight:700;color:var(--graphite);line-height:1.3;margin-bottom:10px;letter-spacing:-.02em;}
+    .card-desc{font-size:.8rem;color:var(--muted);line-height:1.75;font-weight:300;margin-bottom:16px;flex:1;}
+    .card-link{font-family:'Inter Tight',sans-serif;font-size:.75rem;font-weight:700;color:var(--steel);display:flex;align-items:center;gap:6px;transition:gap .25s;}
+    .article-card:hover .card-link{gap:10px;}
+    .card-link svg{width:14px;height:14px;flex-shrink:0;}
+
+    /* COMING SOON (deprecated) */
 
     /* NEWSLETTER */
     .nl-sec{background:var(--graphite);padding:96px 0;position:relative;overflow:hidden;}
@@ -243,54 +227,43 @@
 </section>
 
 <!-- ARTICLES -->
-<section class="coming-sec">
+<section class="articles-sec">
   <div class="sec-wrap">
-    <!-- Coming soon banner -->
-    <div class="coming-card reveal">
-      <div class="coming-header">
-        <div class="coming-badge-wrap">
-          <span class="coming-live-dot"></span>
-          <span class="coming-badge">En production</span>
-        </div>
-        <span class="coming-eta">Publication : Q3 2025</span>
-      </div>
-      <h2>Nos analyses de marché arrivent</h2>
-      <p>Des rapports exclusifs sur le marché locatif business de La Défense : données d'occupation par mois, impact des salons CNIT, analyse des profils voyageurs, évolution des revenus par type de bien. Contenus réservés aux propriétaires investisseurs qui pilotent leur actif sérieusement.</p>
-      <div class="coming-progress-wrap">
-        <div class="coming-track"><div class="coming-fill"></div></div>
-        <span class="coming-pct">40%</span>
-      </div>
-    </div>
-
-    <!-- Topic preview cards -->
+    <!-- Articles grid -->
     <div class="topics-grid">
-      <div class="topic-card reveal d1">
-        <div class="topic-tags">
-          <span class="tag tag-steel">Investissement</span>
-          <span class="tag tag-cyan">La Défense</span>
+
+      <!-- 7 juin 2026 -->
+      <a href="/blog/revenus-airbnb-la-defense-2026" class="article-card">
+        <div class="card-thumb" style="background:linear-gradient(135deg,#0B1220 0%,#1E4E7A 50%,#00B8D9 100%);">
+          <span class="card-thumb-label">Investissement</span>
         </div>
-        <div class="topic-soon"><span class="topic-soon-dot"></span>Prochainement</div>
-        <h3>Investissement Airbnb La Défense : le guide complet 2025</h3>
-        <p>Rentabilité, zones prioritaires, typologies de biens les plus performantes, saisonnalité corporate — tout ce que vous devez savoir avant d'investir dans le 1er business district d'Europe.</p>
-      </div>
-      <div class="topic-card reveal d2">
-        <div class="topic-tags">
-          <span class="tag tag-steel">Fiscalité</span>
-          <span class="tag tag-silver">LMNP · 92</span>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-tag">Revenus · La Défense</span>
+            <span class="card-date">Juin 2026</span>
+          </div>
+          <div class="card-title">Combien rapporte un Airbnb à La Défense en 2026 ? Revenus, rendement et guide complet</div>
+          <p class="card-desc">Données exclusives : studio 1 400–2 000 €/mois, T2 2 200–3 000 €/mois, T3 2 800–3 800 €/mois. Taux d'occupation 90–95 %. Comparatif location classique et optimisation LMNP.</p>
+          <span class="card-link">Lire l'article →</span>
         </div>
-        <div class="topic-soon"><span class="topic-soon-dot"></span>Prochainement</div>
-        <h3>Fiscalité LMNP 92 : optimiser sa déclaration en location meublée</h3>
-        <p>Régime micro-BIC vs réel, amortissements, cotisations sociales, TVA — le guide pratique pour les propriétaires Hauts-de-Seine qui gèrent leur bien en location courte durée.</p>
-      </div>
-      <div class="topic-card reveal d3">
-        <div class="topic-tags">
-          <span class="tag tag-cyan">Revenus</span>
-          <span class="tag tag-steel">Corporate</span>
+      </a>
+
+      <!-- 7 juin 2026 -->
+      <a href="/blog/lmnp-la-defense-guide-fiscal-2026" class="article-card">
+        <div class="card-thumb" style="background:linear-gradient(135deg,#0a2420 0%,#1a3c38 50%,#0a2420 100%);">
+          <span class="card-thumb-label">Fiscalité</span>
         </div>
-        <div class="topic-soon"><span class="topic-soon-dot"></span>Prochainement</div>
-        <h3>Revenus corporate haute saison : décrypter les cycles de La Défense</h3>
-        <p>Salons au CNIT, missions de conseil longue durée, délégations internationales — comment anticiper et monétiser les pics de demande professionnelle tout au long de l'année.</p>
-      </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-tag">LMNP · Fiscalité · 92</span>
+            <span class="card-date">Juin 2026</span>
+          </div>
+          <div class="card-title">LMNP à La Défense : guide fiscal complet 2026 pour propriétaires Airbnb (92)</div>
+          <p class="card-desc">Micro-BIC vs régime réel, amortissement, simulation chiffrée T2 à Courbevoie, déclaration pratique. Tout savoir pour optimiser votre fiscalité Airbnb dans les Hauts-de-Seine.</p>
+          <span class="card-link">Lire l'article →</span>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
