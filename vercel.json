@@ -3,7 +3,9 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/revenus-airbnb-la-defense-2026", "destination": "/blog/revenus-airbnb-la-defense-2026", "permanent": true },
-    { "source": "/lmnp-la-defense-guide-fiscal-2026", "destination": "/blog/lmnp-la-defense-guide-fiscal-2026", "permanent": true }
+    { "source": "/lmnp-la-defense-guide-fiscal-2026", "destination": "/blog/lmnp-la-defense-guide-fiscal-2026", "permanent": true },
+    { "source": "/airbnb-ou-location-classique-la-defense-comparatif", "destination": "/blog/airbnb-ou-location-classique-la-defense-comparatif", "permanent": true },
+    { "source": "/meilleurs-quartiers-investir-airbnb-la-defense", "destination": "/blog/meilleurs-quartiers-investir-airbnb-la-defense", "permanent": true }
   ],
   "headers": [
     {
