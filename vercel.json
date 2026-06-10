@@ -9,7 +9,9 @@
     { "source": "/comment-preparer-son-appartement-airbnb-la-defense", "destination": "/blog/comment-preparer-son-appartement-airbnb-la-defense", "permanent": true },
     { "source": "/profil-locataire-corporate-airbnb-la-defense", "destination": "/blog/profil-locataire-corporate-airbnb-la-defense", "permanent": true },
     { "source": "/declaration-mairie-airbnb-hauts-de-seine-2026", "destination": "/blog/declaration-mairie-airbnb-hauts-de-seine-2026", "permanent": true },
-    { "source": "/conciergerie-airbnb-la-defense-avantages", "destination": "/blog/conciergerie-airbnb-la-defense-avantages", "permanent": true }
+    { "source": "/conciergerie-airbnb-la-defense-avantages", "destination": "/blog/conciergerie-airbnb-la-defense-avantages", "permanent": true },
+    { "source": "/pricing-dynamique-airbnb-la-defense", "destination": "/blog/pricing-dynamique-airbnb-la-defense", "permanent": true },
+    { "source": "/gestion-avis-notation-airbnb-la-defense", "destination": "/blog/gestion-avis-notation-airbnb-la-defense", "permanent": true }
   ],
   "headers": [
     {
