@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://conciergerieladefense.fr/blog</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -75,6 +75,18 @@
   <url>
     <loc>https://conciergerieladefense.fr/blog/gestion-avis-notation-airbnb-la-defense</loc>
     <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://conciergerieladefense.fr/blog/home-staging-ameublement-airbnb-la-defense</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://conciergerieladefense.fr/blog/taxe-sejour-declaration-airbnb-la-defense</loc>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
