@@ -17,7 +17,9 @@
     { "source": "/reglementation-copropriete-airbnb-la-defense", "destination": "/blog/reglementation-copropriete-airbnb-la-defense", "permanent": true },
     { "source": "/assurance-proprietaire-airbnb-la-defense", "destination": "/blog/assurance-proprietaire-airbnb-la-defense", "permanent": true },
     { "source": "/check-in-autonome-serrure-connectee-airbnb-la-defense", "destination": "/blog/check-in-autonome-serrure-connectee-airbnb-la-defense", "permanent": true },
-    { "source": "/frais-charges-airbnb-la-defense-2026", "destination": "/blog/frais-charges-airbnb-la-defense-2026", "permanent": true }
+    { "source": "/frais-charges-airbnb-la-defense-2026", "destination": "/blog/frais-charges-airbnb-la-defense-2026", "permanent": true },
+    { "source": "/menage-nettoyage-professionnel-airbnb-la-defense", "destination": "/blog/menage-nettoyage-professionnel-airbnb-la-defense", "permanent": true },
+    { "source": "/photographie-professionnelle-airbnb-la-defense", "destination": "/blog/photographie-professionnelle-airbnb-la-defense", "permanent": true }
   ],
   "headers": [
     {
