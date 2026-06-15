@@ -71,6 +71,21 @@
     nav.scrolled .nav-cta{background:var(--graphite);}
     .nav-mobile-cta{display:none;background:var(--graphite);color:#fff;text-decoration:none;padding:8px 16px;border-radius:999px;font-family:'Inter Tight',sans-serif;font-size:.76rem;font-weight:700;white-space:nowrap;}
 
+    /* ── HAMBURGER ── */
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;z-index:501;position:relative;}
+    .nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s;}
+    nav.scrolled .nav-hamburger span{background:var(--graphite);}
+    .nav-hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .nav-hamburger.active span:nth-child(2){opacity:0;}
+    .nav-hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+    /* ── MOBILE OVERLAY ── */
+    .nav-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:500;background:rgba(11,18,32,0.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity .35s;}
+    .nav-overlay.open{opacity:1;pointer-events:auto;}
+    .nav-overlay a{color:rgba(255,255,255,.7);text-decoration:none;font-size:1.15rem;font-weight:600;letter-spacing:.04em;transition:color .25s;font-family:'Inter Tight',sans-serif;}
+    .nav-overlay a:hover{color:var(--cyan);}
+    .nav-overlay .overlay-cta{background:var(--cyan);color:var(--graphite) !important;padding:12px 28px;border-radius:999px;font-size:.95rem;font-weight:700;}
+
     /* ── WHATSAPP ── */
     .wa-float{position:fixed;bottom:28px;right:28px;z-index:999;background:#25D366;color:#fff;width:52px;height:52px;border-radius:26px;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.3);transition:transform .25s,width .3s,padding .3s;overflow:hidden;white-space:nowrap;}
     .wa-float svg{width:22px;height:22px;flex-shrink:0;}
@@ -344,6 +359,7 @@
     @media(max-width:768px){
       nav{padding:0 20px;height:60px;}
       .nav-links{display:none;}
+      .nav-hamburger{display:flex;}
       .nav-mobile-cta{display:flex;}
       .hero-inner{padding:60px 20px;}
       .hero{min-height:auto;padding-top:60px;padding-bottom:64px;}
@@ -401,6 +417,9 @@
 <!-- NAV -->
 <nav id="nav">
   <a href="/" class="nav-logo">Conciergerie <em>La Défense</em></a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
   <ul class="nav-links">
     <li><a href="/">Accueil</a></li>
     <li><a href="/qui-sommes-nous">Qui sommes-nous</a></li>
@@ -409,6 +428,15 @@
   </ul>
   <a href="https://hostopia.fr/simulateur-estimer-mes-revenus" class="nav-mobile-cta" target="_blank" rel="noopener">Estimer →</a>
 </nav>
+
+<!-- MOBILE OVERLAY -->
+<div class="nav-overlay" id="navOverlay">
+  <a href="/">Accueil</a>
+  <a href="/qui-sommes-nous">Qui sommes-nous</a>
+  <a href="/blog">Blog</a>
+  <a href="https://calendly.com/hostopia-conciergerie/appel-decouverte" class="overlay-cta" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  <a href="https://hostopia.fr/simulateur-estimer-mes-revenus" target="_blank" rel="noopener" style="color:rgba(255,255,255,.45);font-size:.9rem;">Estimer mes revenus →</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -911,6 +939,25 @@
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 60);
   }, { passive: true });
+
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('navHamburger');
+  const overlay = document.getElementById('navOverlay');
+  if (hamburger && overlay) {
+    hamburger.addEventListener('click', () => {
+      const open = overlay.classList.toggle('open');
+      hamburger.classList.toggle('active', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    overlay.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        overlay.classList.remove('open');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.1 });
