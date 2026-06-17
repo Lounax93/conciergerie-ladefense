@@ -21,7 +21,9 @@
     { "source": "/menage-nettoyage-professionnel-airbnb-la-defense", "destination": "/blog/menage-nettoyage-professionnel-airbnb-la-defense", "permanent": true },
     { "source": "/photographie-professionnelle-airbnb-la-defense", "destination": "/blog/photographie-professionnelle-airbnb-la-defense", "permanent": true },
     { "source": "/optimisation-annonce-airbnb-la-defense", "destination": "/blog/optimisation-annonce-airbnb-la-defense", "permanent": true },
-    { "source": "/checklist-proprietaire-airbnb-la-defense-2026", "destination": "/blog/checklist-proprietaire-airbnb-la-defense-2026", "permanent": true }
+    { "source": "/checklist-proprietaire-airbnb-la-defense-2026", "destination": "/blog/checklist-proprietaire-airbnb-la-defense-2026", "permanent": true },
+    { "source": "/decoration-interieure-airbnb-la-defense", "destination": "/blog/decoration-interieure-airbnb-la-defense", "permanent": true },
+    { "source": "/checklist-arrivee-depart-corporate-airbnb-la-defense", "destination": "/blog/checklist-arrivee-depart-corporate-airbnb-la-defense", "permanent": true }
   ],
   "headers": [
     {
