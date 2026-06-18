@@ -83,6 +83,58 @@
     .whatsapp-float span{display:none;font-size:13px;font-weight:500;}
     .whatsapp-float:hover{width:auto;border-radius:26px;padding:0 20px 0 14px;gap:8px;}
     .whatsapp-float:hover span{display:inline;}
+
+    /* HAMBURGER & OVERLAY */
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;z-index:501;position:relative;}
+    .nav-hamburger span{display:block;width:22px;height:2px;background:var(--graphite);border-radius:2px;transition:transform .3s,opacity .3s;}
+    .nav-hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .nav-hamburger.active span:nth-child(2){opacity:0;}
+    .nav-hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .nav-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:500;background:rgba(11,18,32,0.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity .35s;}
+    .nav-overlay.open{opacity:1;pointer-events:auto;}
+    .nav-overlay a{color:rgba(255,255,255,.7);text-decoration:none;font-size:1.15rem;font-weight:600;letter-spacing:.04em;transition:color .25s;font-family:var(--font-title);}
+    .nav-overlay a:hover{color:var(--cyan);}
+    .nav-overlay .overlay-cta{background:var(--cyan);color:var(--graphite) !important;padding:12px 28px;border-radius:999px;font-size:.95rem;font-weight:700;}
+    @media(min-width:769px){.nav-overlay{display:none !important;}}
+
+    /* MOBILE RESPONSIVE */
+    @media(max-width:768px){
+      nav{padding:0 16px;height:60px;}
+      .nav-links{display:none;}
+      .nav-hamburger{display:flex;}
+      .desktop-cta{display:none !important;}
+      .nav-cta{font-size:.7rem !important;padding:7px 14px !important;}
+      .article-hero{min-height:auto;padding:80px 0 48px;}
+      .article-hero h1{font-size:clamp(22px,6vw,32px);}
+      .container{padding:0 16px;}
+      .article-layout{grid-template-columns:1fr;gap:24px;}
+      .toc-sidebar{display:none;}
+      .article-body{padding:0;}
+      .article-body p{font-size:15px;line-height:1.7;}
+      .article-body h2{font-size:clamp(19px,4.5vw,24px);margin:36px 0 12px;padding-left:12px;}
+      .article-body h3{font-size:clamp(16px,3.5vw,18px);}
+      .article-body ul li,.article-body ol li{font-size:15px;padding:5px 0 5px 20px;}
+      .article-body ul li::before{top:13px;width:5px;height:5px;}
+      .article-table{font-size:13px;}
+      .article-table th,.article-table td{padding:8px 10px;}
+      .article-cta-bloc{padding:32px 20px;margin:32px 0;}
+      .article-cta-bloc h3{font-size:20px;}
+      .btn-cta-primary,.btn-cta-secondary{padding:12px 20px;font-size:14px;width:100%;}
+      .article-cta-buttons{flex-direction:column;gap:10px;}
+      .info-box,.warn-box{padding:16px 18px;margin:16px 0;}
+      .sidebar-btn-main,.sidebar-btn-sec{width:100%;}
+      .article-hero-meta{gap:10px;font-size:12px;flex-wrap:wrap;}
+      .article-breadcrumb{font-size:12px;flex-wrap:wrap;}
+      .faq-question{font-size:15px;}
+      .faq-answer{font-size:14px;}
+      .whatsapp-float{width:48px;height:48px;bottom:16px;right:16px;}
+      .whatsapp-float svg{width:20px;height:20px;}
+    }
+    @media(max-width:480px){
+      .article-hero h1{font-size:clamp(20px,5.5vw,26px);}
+      .article-body p{font-size:14.5px;}
+      .article-table{font-size:12px;display:block;overflow-x:auto;white-space:nowrap;}
+    }
   </style>
 </head>
 <body>
@@ -96,7 +148,16 @@
       <a href="/qui-sommes-nous.html">Qui sommes-nous</a>
       <a href="/blog">Blog</a>
     </div>
-    <a href="https://calendly.com/hostopia-conciergerie/appel-decouverte" class="nav-cta" target="_blank" rel="noopener">Prendre rendez-vous</a>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="https://calendly.com/hostopia-conciergerie/appel-decouverte" class="nav-cta desktop-cta" target="_blank" rel="noopener">Prendre rendez-vous</a>
+    <div class="nav-overlay">
+      <a href="/">Accueil</a>
+      <a href="/qui-sommes-nous.html">Qui sommes-nous</a>
+      <a href="/blog">Blog</a>
+      <a href="https://calendly.com/hostopia-conciergerie/appel-decouverte" class="overlay-cta" target="_blank" rel="noopener">Prendre rendez-vous</a>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -360,6 +421,21 @@
         if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
       });
     });
+    // Hamburger menu
+    const ham = document.querySelector('.nav-hamburger');
+    const overlay = document.querySelector('.nav-overlay');
+    if(ham && overlay){
+      ham.addEventListener('click', () => {
+        ham.classList.toggle('active');
+        overlay.classList.toggle('open');
+      });
+      overlay.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          ham.classList.remove('active');
+          overlay.classList.remove('open');
+        });
+      });
+    }
   </script>
 </body>
 </html>
