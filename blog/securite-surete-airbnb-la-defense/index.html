@@ -178,7 +178,57 @@
       .ao-inner{padding:0 16px;}
       footer{padding:32px 16px;}
     }
-  </style>
+  
+    /* MOBILE RESPONSIVE */
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;z-index:501;position:relative;}
+    .nav-hamburger span{display:block;width:22px;height:2px;background:var(--graphite);border-radius:2px;transition:transform .3s,opacity .3s;}
+    .nav-hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .nav-hamburger.active span:nth-child(2){opacity:0;}
+    .nav-hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .nav-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:500;background:rgba(11,18,32,0.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity .35s;}
+    .nav-overlay.open{opacity:1;pointer-events:auto;}
+    .nav-overlay a{color:rgba(255,255,255,.7);text-decoration:none;font-size:1.15rem;font-weight:600;letter-spacing:.04em;transition:color .25s;font-family:'Inter Tight',sans-serif;}
+    .nav-overlay a:hover{color:var(--cyan);}
+    .nav-overlay .overlay-cta{background:var(--cyan);color:var(--graphite)!important;padding:12px 28px;border-radius:999px;font-size:.95rem;font-weight:700;}
+    @media(min-width:769px){.nav-overlay{display:none!important;}}
+    @media(max-width:768px){
+      nav{padding:0 16px!important;}
+      .nav-inner{padding:0 16px!important;height:56px!important;}
+      .nav-links{display:none!important;}
+      .nav-hamburger{display:flex!important;}
+      .nav-cta{display:none!important;}
+      .article-hero{padding:72px 0 40px!important;}
+      .article-hero h1{font-size:clamp(22px,6vw,32px)!important;}
+      .container{padding:0 16px!important;}
+      .article-layout{grid-template-columns:1fr!important;gap:24px!important;}
+      .toc-sidebar{display:none!important;}
+      .article-body{padding:0!important;}
+      .article-body p{font-size:15px!important;line-height:1.7!important;}
+      .article-body h2{font-size:clamp(19px,4.5vw,24px)!important;margin:36px 0 12px!important;padding-left:12px!important;}
+      .article-body h3{font-size:clamp(16px,3.5vw,18px)!important;}
+      .article-body ul li,.article-body ol li{font-size:15px!important;padding:5px 0 5px 20px!important;}
+      .article-body ul li::before{top:13px!important;width:5px!important;height:5px!important;}
+      .article-table{font-size:13px!important;}
+      .article-table th,.article-table td{padding:8px 10px!important;}
+      .article-cta-bloc{padding:32px 20px!important;margin:32px 0!important;}
+      .article-cta-bloc h3{font-size:20px!important;}
+      .btn-cta-primary,.btn-cta-secondary{padding:12px 20px!important;font-size:14px!important;width:100%!important;}
+      .article-cta-buttons{flex-direction:column!important;gap:10px!important;}
+      .info-box,.warn-box{padding:16px 18px!important;margin:16px 0!important;}
+      .sidebar-btn-main,.sidebar-btn-sec{width:100%!important;}
+      .article-hero-meta{gap:10px!important;font-size:12px!important;flex-wrap:wrap!important;}
+      .article-breadcrumb{font-size:12px!important;flex-wrap:wrap!important;}
+      .faq-question{font-size:15px!important;}
+      .faq-answer{font-size:14px!important;}
+      .whatsapp-float{width:48px!important;height:48px!important;bottom:16px!important;right:16px!important;}
+      .whatsapp-float svg{width:20px!important;height:20px!important;}
+    }
+    @media(max-width:480px){
+      .article-hero h1{font-size:clamp(20px,5.5vw,26px)!important;}
+      .article-body p{font-size:14.5px!important;}
+      .article-table{font-size:12px!important;display:block!important;overflow-x:auto!important;white-space:nowrap!important;}
+    }
+</style>
 </head>
 <body>
 
@@ -582,6 +632,24 @@
       overlay.classList.toggle('open');
     });
   }
+
+    // Hamburger menu
+    (function(){
+      var ham = document.querySelector('.nav-hamburger');
+      var overlay = document.querySelector('.nav-overlay');
+      if(ham && overlay){
+        ham.addEventListener('click', function(){
+          ham.classList.toggle('active');
+          overlay.classList.toggle('open');
+        });
+        overlay.querySelectorAll('a').forEach(function(a){
+          a.addEventListener('click', function(){
+            ham.classList.remove('active');
+            overlay.classList.remove('open');
+          });
+        });
+      }
+    })();
 </script>
 </body>
 </html>
