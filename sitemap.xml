@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://conciergerieladefense.fr/blog</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -169,8 +169,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://conciergerieladefense.fr/blog/politique-animaux-acceptes-airbnb-corporate-la-defense</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://conciergerieladefense.fr/blog/conciergerie-ou-gestion-directe-airbnb-la-defense</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://conciergerieladefense.fr/blog/saisonnalite-airbnb-la-defense</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
