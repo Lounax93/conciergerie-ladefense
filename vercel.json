@@ -27,7 +27,9 @@
     { "source": "/equipement-high-tech-wifi-airbnb-corporate-la-defense", "destination": "/blog/equipement-high-tech-wifi-airbnb-corporate-la-defense", "permanent": true },
     { "source": "/politique-animaux-acceptes-airbnb-corporate-la-defense", "destination": "/blog/politique-animaux-acceptes-airbnb-corporate-la-defense", "permanent": true },
     { "source": "/conciergerie-ou-gestion-directe-airbnb-la-defense", "destination": "/blog/conciergerie-ou-gestion-directe-airbnb-la-defense", "permanent": true },
-    { "source": "/saisonnalite-airbnb-la-defense", "destination": "/blog/saisonnalite-airbnb-la-defense", "permanent": true }
+    { "source": "/saisonnalite-airbnb-la-defense", "destination": "/blog/saisonnalite-airbnb-la-defense", "permanent": true },
+    { "source": "/prix-immobilier-achat-airbnb-la-defense-2026", "destination": "/blog/prix-immobilier-achat-airbnb-la-defense-2026", "permanent": true },
+    { "source": "/calendrier-evenements-airbnb-la-defense-2026", "destination": "/blog/calendrier-evenements-airbnb-la-defense-2026", "permanent": true }
   ],
   "headers": [
     {
