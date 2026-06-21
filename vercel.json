@@ -31,7 +31,9 @@
     { "source": "/prix-immobilier-achat-airbnb-la-defense-2026", "destination": "/blog/prix-immobilier-achat-airbnb-la-defense-2026", "permanent": true },
     { "source": "/calendrier-evenements-airbnb-la-defense-2026", "destination": "/blog/calendrier-evenements-airbnb-la-defense-2026", "permanent": true },
     { "source": "/fiscalite-lmnp-airbnb-la-defense-2026", "destination": "/blog/fiscalite-lmnp-airbnb-la-defense-2026", "permanent": true },
-    { "source": "/meilleur-commune-investir-airbnb-courbevoie-puteaux-neuilly", "destination": "/blog/meilleur-commune-investir-airbnb-courbevoie-puteaux-neuilly", "permanent": true }
+    { "source": "/meilleur-commune-investir-airbnb-courbevoie-puteaux-neuilly", "destination": "/blog/meilleur-commune-investir-airbnb-courbevoie-puteaux-neuilly", "permanent": true },
+    { "source": "/equipements-cuisine-professionnelle-airbnb-corporate-la-defense", "destination": "/blog/equipements-cuisine-professionnelle-airbnb-corporate-la-defense", "permanent": true },
+    { "source": "/automatisation-outils-gestion-airbnb-corporate-la-defense", "destination": "/blog/automatisation-outils-gestion-airbnb-corporate-la-defense", "permanent": true }
   ],
   "headers": [
     {
